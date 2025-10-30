@@ -2,6 +2,8 @@ import Image from "next/image";
 import { FaApple } from "react-icons/fa";
 import { LuSearch } from "react-icons/lu";
 import { LuShoppingBag } from "react-icons/lu";
+import Button from "./Button";
+
 
 const Menu = () => {
   return (
@@ -10,13 +12,19 @@ const Menu = () => {
 
       <nav className="menu">
         <FaApple className="apple-icon" />
-        <ul>
-          <li>Mac</li>
-          <li>iPhone</li>
-          <li>iPad</li>
-          <li>iWatch</li>
-          <li>Support</li>
-        </ul>
+        
+        <div className="menu-btns">
+                <Button name="Mac"></Button>
+        
+                <Button name="iPhone"></Button>
+        
+                <Button name="iPad"></Button>
+        
+                <Button name="iWatch"></Button>
+        
+                <Button name="Support"></Button>
+              </div>
+
         <div className="flex items-center justify-end gap-4">
           <LuSearch className="icon" />
           <span>|</span>
@@ -28,3 +36,4 @@ const Menu = () => {
 };
 
 export default Menu;
+

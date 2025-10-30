@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
+@custom-variant hover (&:hover);
+
 @import "tailwindcss";
 
 :root {
-  /*
-  --background: #ffffff;
-  --foreground: #171717;*/
-
   /** COLORS **/
   --darkslategrey: #404354;
   --turquoise: #58d7c4;
   --mistyrose: #f2cec6;
+  --snow: #fffafa;
+  --bg-color: linear-gradient(-65.72deg, #c8dce5, #b6ccda);
 }
 /*
 @theme inline {
@@ -29,9 +29,9 @@
 */
 body {
   padding: 25px 70px;
-  background: linear-gradient(-65.72deg, #c8dce5, #b6ccda);
+  background: var(--bg-color);
   font-family: "Poppins", sans-serif;
-  color: white;
+  color: var(--snow);
 
   button {
     cursor: pointer;
@@ -63,18 +63,12 @@ h1 {
     cursor: pointer;
   }
 
-  ul {
+  .menu-btns {
     display: flex;
     gap: 25px;
     align-items: center;
     justify-self: center;
     justify-content: space-evenly;
-
-    list-style: none;
-
-    li {
-      cursor: pointer;
-    }
   }
 
   .icon {
@@ -113,5 +107,38 @@ h1 {
     word-spacing: -2px;
     margin: -10px;
     font-size: 9px;
+    cursor: default;
   }
+}
+
+/* med "knapperne" her kan jeg ikke få det til at virke med nesting... */
+.btn {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 100px;
+  background-color: transparent;
+  color: var(--snow);
+  text-align: center;
+}
+
+/* Hover for både li og knap */
+.btn:hover {
+  background-color: var(--snow);
+}
+
+.btn span {
+  display: inline-block;
+  background: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.btn:hover span {
+  background: var(--bg-color);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  width: 100%;
 }

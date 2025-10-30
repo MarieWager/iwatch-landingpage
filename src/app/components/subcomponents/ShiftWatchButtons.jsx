@@ -1,7 +1,7 @@
 /* få at få en const ("funktion") frem tast: sfc */
 
 const ShiftWatchButtons = ({ color }) => {
-  return <button className={`border-2 border-white rounded-full h-7 w-7 ${color}`}></button>;
+  return <button className={`border-2 border-[var(--snow)] rounded-full h-7 w-7 ${color}`}></button>;
 };
 
 export default ShiftWatchButtons;
