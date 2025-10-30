@@ -1,9 +1,8 @@
 import Menu from "./subcomponents/Menu";
 
-
 const Header = () => {
   return (
-    <header className="header pb-10">
+    <header className="header pb-[25px]">
       <Menu></Menu>
     </header>
   );
