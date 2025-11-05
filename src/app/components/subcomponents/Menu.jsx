@@ -1,39 +1,27 @@
-import Image from "next/image";
 import { FaApple } from "react-icons/fa";
-import { LuSearch } from "react-icons/lu";
-import { LuShoppingBag } from "react-icons/lu";
+import { LuSearch, LuShoppingBag } from "react-icons/lu";
 import Button from "./Button";
-
 
 const Menu = () => {
   return (
-    <div>
-      <div className="grid grid-cols-2"></div>
+    <nav className="menu flex items-center justify-between">
+      <FaApple className="apple-icon text-xl" />
 
-      <nav className="menu">
-        <FaApple className="apple-icon" />
-        
-        <div className="menu-btns">
-                <Button name="Mac"></Button>
-        
-                <Button name="iPhone"></Button>
-        
-                <Button name="iPad"></Button>
-        
-                <Button name="iWatch"></Button>
-        
-                <Button name="Support"></Button>
-              </div>
+      <div className="menu-btns flex gap-4">
+        <Button name="Mac" /> {/* Bevarer .btn CSS + hover */}
+        <Button name="iPhone" /> {/* Bevarer .btn CSS + hover */}
+        <Button name="iPad" /> {/* Bevarer .btn CSS + hover */}
+        <Button name="iWatch" variant="iwatch" defaultStyle={false} /> {/* Special knap */}
+        <Button name="Support" /> {/* Bevarer .btn CSS + hover */}
+      </div>
 
-        <div className="flex items-center justify-end gap-4">
-          <LuSearch className="icon" />
-          <span>|</span>
-          <LuShoppingBag className="icon" />
-        </div>
-      </nav>
-    </div>
+      <div className="flex items-center gap-4">
+        <LuSearch className="icon text-lg" />
+        <span>|</span>
+        <LuShoppingBag className="icon text-lg" />
+      </div>
+    </nav>
   );
 };
 
 export default Menu;
-

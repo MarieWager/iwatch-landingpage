@@ -1,10 +1,11 @@
-const Button = ({ name }) => {
-  return (
-    <button
-      className="btn">
-      <span>{name}</span>
-    </button>
-  );
+const Button = ({ name, className = "", variant, defaultStyle = true }) => {
+  // Variant-specifikke Tailwind-klasser
+  const variantClass = variant === "iwatch" ? "bg-[var(--snow)] text-[#b6ccda] px-[10px] py-[5px] rounded-full" : "";
+
+  // Hvis defaultStyle er true, brug .btn CSS + transition
+  const baseClass = defaultStyle ? "btn transition-colors duration-200" : "";
+
+  return <button className={`${baseClass} ${variantClass} ${className}`}>{name}</button>;
 };
 
 export default Button;
